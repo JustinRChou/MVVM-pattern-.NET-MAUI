@@ -16,7 +16,7 @@ public class QuoteService : IQuoteService
 
     public async Task<string> GetQuote()
     {
-        var response = await httpClient.GetAsync("https://my-quotes-api.com/quote-of-the-day");
+        var response = await httpClient.GetAsync("https://animechan.xyz/api/random");
 
         if (response.IsSuccessStatusCode)
         {

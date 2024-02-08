@@ -8,14 +8,17 @@
         <Button
             Command="{Binding GetQuoteCommand}"
             IsVisible="{Binding IsButtonVisible}"
-            Text="Get Quote of the day" />
-
+            Text="Get Quote of the day 2" />
+        <Button
+    Command="{Binding GetQuoteCommand}"
+    IsVisible="{Binding IsButtonVisible}"
+    Text="Get Quote of the day 3" />
         <Label
             HorizontalOptions="Center"
             IsVisible="{Binding IsLabelVisible}"
             Style="{DynamicResource TitleStyle}"
             Text="{Binding QuoteOfTheDay}"
-            TextColor="white"
+            TextColor="Black"
             VerticalOptions="Center" />
     </Grid>
 
