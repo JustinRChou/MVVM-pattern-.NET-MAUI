@@ -31,6 +31,18 @@ public class MainPageViewModel : INotifyPropertyChanged
         }
     }
 
+    private bool isButtonVisible2 = true;
+    public bool IsButtonVisible2
+    {
+        get => isButtonVisible2;
+        set
+        {
+            isButtonVisible2 = value;
+            PropertyChanged?.Invoke(this,
+                new PropertyChangedEventArgs(nameof(IsButtonVisible2)));
+        }
+    }
+
     bool isLabelVisible;
     public bool IsLabelVisible
     {
@@ -44,6 +56,7 @@ public class MainPageViewModel : INotifyPropertyChanged
     }
 
     public ICommand GetQuoteCommand => new Command(async _ => await GetQuote());
+    public ICommand RefreshCommand => new Command( _ =>  Refresh());
 
     public MainPageViewModel(IQuoteService quoteService)
     {
@@ -66,6 +79,12 @@ public class MainPageViewModel : INotifyPropertyChanged
         {
             IsButtonVisible = true;
         }
+    }
+    private void Refresh()
+    {
+        IsButtonVisible = true;
+        IsLabelVisible = false;
+        QuoteOfTheDay = "";
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
